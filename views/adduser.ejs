@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <link rel='stylesheet' href='/stylesheets/style.css' />    
+    </head>
+
+<body class="theme-red">
+      
+ 
+
+
+          
+            
+            <!-- Basic Table -->
+            <div class="container">
+                  
+                <form  class="form-horizontal" role="form" method='post', enctype="form-data", action='/adduser'>
+                           <div class="row"> 
+                            <div class="col-sm-6 clearfix">
+                                <label>name</label>
+                                <input type="text" name='name' class="form-control " id ="name" placeholder="name" tabIndex="1" autofocus >
+                            </div>
+                            <div class="col-sm-6 clearfix">
+                                <label>Phone No</label>
+                                <input type="text" name='phone' class="form-control" placeholder="Phone" tabIndex="2" >
+                            </div>
+                           
+                        </div>
+                       
+                        <div class="row"> 
+                           
+                            <div class="col-sm-6 clearfix">
+                                <label>Email</label>
+                                <input type="email" name='email' class="form-control" placeholder="Email"  tabIndex="3" >
+                            </div>
+                            <div class="col-sm-6 clearfix">
+                                <label>gender</label>
+                                
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="gender" class="custom-control-input" name="gender" value="male" class="custom-control-input" tabIndex="4">
+                                    <label class="custom-control-label" for="gender" >male</label>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="gender1" name="gender" value="female" class="custom-control-input" 
+                                 >
+                                    <label class="custom-control-label" for="gender1">female</label>
+                                  </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                           
+                            <div class="col-sm-6 clearfix">
+                                <label for="userdatepicker">Date of birth</label>  
+                                <input type="date" name='DOB' id="userdatepicker" class="form-control " tabIndex="5" >
+                            </div>
+                        </div>
+                       
+                            <!-- <div class="checkbox">
+                                <label class="pull-right">
+                                    <a href="#">Forgotten Password?</a>
+                                </label>
+                            </div> -->
+                            <div class="row">
+                            <button type="submit" tabIndex="6" class="btn btn-success">submit</button>
+
+                        </div>
+
+                             
+                            
+                        </form>
+                        <script type="text/javascript">
+                            $(document).on('keypress', 'input,select', function (e) {
+                                if (e.which == 13) {
+                                    e.preventDefault();
+                                    var $next = $('[tabIndex=' + (+this.tabIndex + 1) + ']');
+                                    console.log($next.length);
+                                    if (!$next.length) {
+                                   $next = $('[tabIndex=1]');        }
+                                    $next.focus() .click();
+                                }
+                            });
+                            </script>
+            
+            </div>
+             <!-- #END# Basic Table -->
+
+        </div>
+   
+    </section>
+
+ 
+   
+</body>
+
+</html>

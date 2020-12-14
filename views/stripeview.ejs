@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <link rel='stylesheet' href='/stylesheets/style.css' /> 
+        <script src="/jquery/jquery.js"></script>    
+    </head>
+
+<body class="theme-red">
+      
+ 
+
+
+          
+            
+            <!-- Basic Table -->
+            <div class="container">
+                  
+                <form  class="form-horizontal" role="form" >
+                           <div class="row"> 
+                            <div class="col-sm-6 clearfix">
+                                <label>amount</label>
+                                <input type="number" name='amount' class="form-control " id ="amounts" placeholder="amount" tabIndex="1" autofocus >
+                            </div>
+                            <select id="volume">
+
+                                <option  value="INR">INR</option>
+                                <option value="USD">USD</option>
+                              
+                              </select>
+                           
+                        </div>
+                        <input type="hidden" name='user_id' class="form-control " id ="user_ids" value="<%= user[0]._id %>" >
+                       
+                            <!-- <div class="checkbox">
+                                <label class="pull-right">
+                                    <a href="#">Forgotten Password?</a>
+                                </label>
+                            </div> -->
+                            <div class="row">
+                            <button type="button" tabIndex="6" id="stripepaybtn" class="btn btn-success">submit</button>
+
+                        </div>
+
+                             
+                            
+                        </form>
+                        <script type="text/javascript">
+                            $(document).on('keypress', 'input,select', function (e) {
+                                if (e.which == 13) {
+                                    e.preventDefault();
+                                    var $next = $('[tabIndex=' + (+this.tabIndex + 1) + ']');
+                                    console.log($next.length);
+                                    if (!$next.length) {
+                                   $next = $('[tabIndex=1]');        }
+                                    $next.focus() .click();
+                                }
+                            });
+                            </script>
+            
+            </div>
+             <!-- #END# Basic Table -->
+
+        </div>
+   
+    </section>
+
+    <script src="/js/custom.js"></script> 
+   
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="UTF-8"> 
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/jquery/jquery.js"></script>  
+   
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <div class="column">
+        <a href="/getuser" class="btn btn-primary">Add User</a> 
+        <a href="/logout" class="btn btn-primary">logout</a> 
+        <a href="/stripview" class="btn btn-primary">stripe payment</a> 
+        <a href="/chat" class="btn btn-primary">online chat</a> 
+    </div>
+   
+                  <div class="table-responsive">
+                      <table class="table table-bordered table-striped table-hover ">
+                          <thead>
+                              <tr>
+                                  <th>Name</th>
+                                  <th>Gender</th>
+                                  <th>DOB</th>
+                                  <th>Email</th>
+                                  <th>Phone No</th>
+                                  <th>Registration Date</th>
+                                   <th>Action</th>
+                              </tr>
+                          </thead>
+                          <tfoot>
+                              <tr>
+                                  <th>Name</th>
+                                  <th>Gender</th>
+                                  <th>DOB</th>
+                                  <th>Email</th>
+                                  <th>Phone No</th>
+                                  <th>Registration Date</th>
+                                  <th>Action</th>
+                              </tr>
+                          </tfoot>
+                          <tbody>
+                            <% user.forEach(function(data){ %>
+                                   <tr>
+                                   <td><%= data.name%></td>
+                                   <td><%= data.gender%></td>
+                                   <td><%= data.DOB%></td>
+                                   <td><%= data.email%></td>
+                                  <td><%= data.phone%></td>
+                                  <td><%= data.date%></td>
+                                   <td>
+                                      
+                                       <div class="row">
+                                           
+                                        <button type="button" id="viewbutton" dataid="<%= data._id%>" class="btn btn-primary">Edit </button>
+                                        <button type="button" id="deletebutton" dataid="<%= data._id%>"class="btn btn-danger">Delete</button>
+                                       </div>
+                                              
+                                       <!-- <div class="btn-group dropdown">
+                                       <button class="btn btn-xs blue dropdown-toggle"
+                                           type="button" data-toggle="dropdown"
+                                           aria-expanded="false"> Actions
+                                           <i class="fa fa-angle-down"></i>
+                                       </button>
+                                       <ul class="dropdown-menu pull-left" role="menu" style="width:150px">
+                                           <li>
+                                                <a href="/user_edit/<%= data._id %>"
+                                                   data-id="<%= this._id %>">
+                                                   <i class="icon-pencil"></i></a>
+                                           </li>
+                                           <li class="divider"> </li>
+                                           <li>
+                                               <a href="/user_delete/<%= data._id %>"
+                                                   data-id="<%= this._id %>"> </a>
+                                           </li>
+                                           <li class="divider"> </li>
+                                           <li>
+                                               <a href="/user_block/<%= data._id %>/<%= data.email_status%>"
+                                                   data-id="<%= this._id %>">
+                                                   <i class="icon-trash"></i><%= data.email_status =='true' ? 'Inactive' : 'Active' %>
+                                               </a>
+                                           </li>
+                                       </ul>
+                                   </div></td> -->
+                               </tr>
+                               <% }) %>
+                          
+                           
+                       </tbody>
+                      </table>
+                  </div>
+                   
+ </body>
+</html>
